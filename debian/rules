@@ -4,7 +4,11 @@ DEB_HOST_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 confflags = --disable-rpath --disable-video-directfb \
-            --disable-nas --disable-esd --disable-arts
+            --disable-nas --disable-esd --disable-arts \
+            --disable-alsa-shared --disable-pulseaudio \
+            --disable-x11-shared  --disable-video-rpi \
+            --disable-video_opengl --enable-video-vulkan \
+            --enable-video-kmsdrm
 
 # These flags can be used to create a package directly linking with external libraries and having the appropriate package dependencies
 #confflags += --disable-alsa-shared
